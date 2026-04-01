@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | AuraWellness Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            background: rgba(77, 124, 15, 0.02);
+            padding-top: 80px;
+        }
+
+        .dashboard-sidebar {
+            background: white;
+            border-right: 1px solid var(--clr-border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            color: var(--clr-text-secondary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(77, 124, 15, 0.05);
+            color: var(--clr-primary);
+        }
+
+        .dashboard-main {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--clr-border);
+        }
+
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        .meal-plan-card {
+            background: linear-gradient(135deg, var(--clr-primary), #3f6212);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meal-plan-card::after {
+            content: '\f2e7';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .dashboard-sidebar { 
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                width: 280px;
+                height: calc(100vh - 80px);
+                z-index: 999;
+                background: white;
+                transition: var(--transition);
+                box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+            }
+            .dashboard-sidebar.active {
+                left: 0;
+            }
+            .dashboard-main { padding: 2rem 1rem; }
+            .tracker-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+
+<body>
+
+    <!-- Navbar Snippet -->
+    <nav class="navbar" style="background: white; border-bottom: 1px solid var(--clr-border);">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+            </a>
+            <!-- Mobile Sidebar Toggle -->
+            <button id="sidebar-toggle" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--clr-primary);" class="d-lg-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <a href="#" class="sidebar-link active"><i class="fas fa-th-large"></i> Overview</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-utensils"></i> My Meal Plans</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-chart-line"></i> Symptom Tracker</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-calendar-alt"></i> Appointments</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Lab Results</a>
+            <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--clr-border);">
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="login.html" class="sidebar-link" style="color: #ef4444;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <div>
+                    <h2 style="font-size: 2rem;">Welcome back, Jane.</h2>
+                    <p style="color: var(--clr-text-secondary);">Consistency is your healing superpower. You've logged 14 days in a row!</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-plus"></i> Book Consultation</a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-2">
+                    <div class="stat-card">
+                        <p style="font-size: 0.8rem; color: var(--clr-text-secondary); text-transform: uppercase; font-weight: 700;">Energy Level</p>
+                        <h3 style="font-size: 1.8rem; color: var(--clr-primary);">7.5 / 10</h3>
+                        <p style="font-size: 0.75rem; color: #22c55e;"><i class="fas fa-arrow-up"></i> 12% from last week</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="stat-card">
+                        <p style="font-size: 0.8rem; color: var(--clr-text-secondary); text-transform: uppercase; font-weight: 700;">Inflammation</p>
+                        <h3 style="font-size: 1.8rem; color: var(--clr-accent);">Reduced</h3>
+                        <p style="font-size: 0.75rem; color: #22c55e;"><i class="fas fa-check"></i> Trending Down</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="stat-card">
+                        <p style="font-size: 0.8rem; color: var(--clr-text-secondary); text-transform: uppercase; font-weight: 700;">Hydration</p>
+                        <h3 style="font-size: 1.8rem; color: var(--clr-primary);">2.4L</h3>
+                        <p style="font-size: 0.75rem; color: var(--clr-text-secondary);">Goal: 2.8L</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="stat-card">
+                        <p style="font-size: 0.8rem; color: var(--clr-text-secondary); text-transform: uppercase; font-weight: 700;">Next Call</p>
+                        <h3 style="font-size: 1.2rem;">Oct 12, 10:00 AM</h3>
+                        <p style="font-size: 0.75rem; color: var(--clr-primary);">With Dr. Elena</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="tracker-grid">
+                <!-- Chart Area -->
+                <div class="stat-card">
+                    <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                         <h4>Autoimmune Symptom Tracking</h4>
+                         <select class="form-control" style="width: auto; padding: 0.4rem 1rem; font-size: 0.8rem;">
+                            <option>Last 30 Days</option>
+                            <option>Last 3 Months</option>
+                         </select>
+                    </div>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="symptomChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Meal Plan Preview -->
+                <div class="meal-plan-card">
+                    <span class="badge" style="background: rgba(255,255,255,0.2); color: white;">Today's Focus</span>
+                    <h3 style="margin: 1rem 0;">Phase 2: <br>Gut Lining Repair</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 2rem;">You are on day 12 of your customized L-Glutamine & Bone Broth integration.</p>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem;">
+                        <h5 style="margin-bottom: 0.8rem;"><i class="fas fa-clock"></i> Next Meal: Dinner</h5>
+                        <p style="font-size: 0.85rem;">Steamed Wild Salmon with Turmeric-Zucchini Grate & Roasted Fennel.</p>
+                    </div>
+                    
+                    <button class="btn" style="background: white; color: var(--clr-primary); width: 100%; font-weight: 800;">Download Full Week PDF</button>
+                </div>
+            </div>
+
+            <!-- Protocol Widgets -->
+            <div class="row" style="margin-top: 3.5rem;">
+                 <div class="col-md-6 mb-2">
+                    <div class="stat-card">
+                        <h4 class="mb-2"><i class="fas fa-pills" style="color: var(--clr-primary);"></i> Daily Supplement Stack</h4>
+                        <div style="display:flex; flex-direction:column; gap:0.8rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom: 0.5rem; border-bottom: 1px solid var(--clr-border);">
+                                <span style="font-size: 0.9rem;">Omega-3 High Potency</span>
+                                <span class="badge" style="background: rgba(77, 124, 15, 0.1); color: var(--clr-primary);">Morning</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom: 0.5rem; border-bottom: 1px solid var(--clr-border);">
+                                <span style="font-size: 0.9rem;">Vitamin D3 + K2</span>
+                                <span class="badge" style="background: rgba(77, 124, 15, 0.1); color: var(--clr-primary);">Morning</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size: 0.9rem;">Magnesium Glycinate</span>
+                                <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--clr-accent);">Evening</span>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6 mb-2">
+                    <div class="stat-card" style="height: 100%;">
+                        <h4 class="mb-2"><i class="fas fa-tasks" style="color: var(--clr-primary);"></i> Healing Tasks</h4>
+                        <label style="display:flex; align-items:center; gap: 1rem; margin-bottom: 1rem; cursor: pointer;">
+                            <input type="checkbox" checked style="width: auto;">
+                            <span style="font-size: 0.9rem; text-decoration: line-through; opacity: 0.6;">Morning Vagus Nerve Stimulation</span>
+                        </label>
+                        <label style="display:flex; align-items:center; gap: 1rem; margin-bottom: 1rem; cursor: pointer;">
+                            <input type="checkbox" style="width: auto;">
+                            <span style="font-size: 0.9rem;">Hydration Goal (2L mark)</span>
+                        </label>
+                        <label style="display:flex; align-items:center; gap: 1rem; cursor: pointer;">
+                            <input type="checkbox" style="width: auto;">
+                            <span style="font-size: 0.9rem;">10 Min Evening Breathwork</span>
+                        </label>
+                    </div>
+                 </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Chart Implementation -->
+    <script>
+        const ctx = document.getElementById('symptomChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                    label: 'Symptom Severity (0-10)',
+                    data: [8, 7.5, 6, 6.5, 4, 3.5],
+                    borderColor: '#4d7c0f',
+                    backgroundColor: 'rgba(77, 124, 15, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#4d7c0f'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+        // Sidebar Toggle Logic
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                const icon = sidebarToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Close sidebar when clicking links
+            sidebar.querySelectorAll('.sidebar-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        sidebar.classList.remove('active');
+                        const icon = sidebarToggle.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+    </script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

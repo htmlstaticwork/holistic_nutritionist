@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | AuraWellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Navbar Snippet -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Main</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 - Creative</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- Mobile Actions -->
+                <div class="nav-menu-actions d-lg-none">
+                    <div class="mobile-toggles">
+                        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="theme-toggle" id="rtl-toggle-mobile" aria-label="Toggle RTL mode">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-toggle" id="rtl-toggle" aria-label="Toggle RTL mode">
+                    <i class="fas fa-align-right"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Login</a>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header style="padding: 150px 0 80px; text-align: center; background: rgba(245, 158, 11, 0.02);">
+        <div class="container hero-content">
+            <span class="badge">A Support-First Experience</span>
+            <h1 style="font-size: 3.5rem;">How We Support <br>Your Journey.</h1>
+            <p>We provide a range of holistic services designed to address the specific needs of autoimmune systems. From nutrition to stress management, we look at the whole picture.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(77, 124, 15, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-utensils text-primary" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Nutritional Mapping</h3>
+                      <p>Personalized food protocols based on your specific biomarkers and inflammatory triggers.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Food sensitivity screening</li>
+                          <li>Inflammation mapping</li>
+                          <li>Custom meal guides</li>            </ul>
+                      <a href="service-details-1.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+                 <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(245, 158, 11, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-heartbeat text-accent" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Lifestyle Rituals</h3>
+                      <p>Evidence-based habits that regulate the nervous system and promote sustainable healing.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Sleep optimization</li>
+                          <li>Nervous system regulation</li>
+                          <li>Sustainable movement</li>            </ul>
+                      <a href="service-details-2.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+                 <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(77, 124, 15, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-microscope text-primary" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Lab Analysis Support</h3>
+                      <p>Helping you understand your markers and integrating laboratory results into your plan.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Biomarker interpretation</li>
+                          <li>Nutrient gap analysis</li>
+                          <li>Functional medicine links</li>            </ul>
+                      <a href="service-details-3.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(77, 124, 15, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-seedling text-primary" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Supplement Guidance</h3>
+                      <p>Personalized herb and supplement protocols that avoid pharmaceutical interactions.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Interaction screening</li>
+                          <li>Botanical mapping</li>
+                          <li>Nutrient synergy</li>            </ul>
+                      <a href="service-details-4.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(245, 158, 11, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-users text-accent" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Community Support</h3>
+                      <p>Access to our healing community for shared experiences and sustained motivation.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Monthly Q&A sessions</li>
+                          <li>Peer support circles</li>
+                          <li>Private resource library</li>            </ul>
+                      <a href="service-details-5.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6 mb-4 info-card">
+                    <div class="card reveal border-0 glass">
+                      <div style="background: rgba(77, 124, 15, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-calendar-alt text-primary" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <h3>Ongoing Maintenance</h3>
+                      <p>Long-term check-ins and protocol adjustments to ensure your health remains stable.</p>
+                      <ul class="list-check mb-2" style="font-size: 0.9rem;">
+                          <li>Quarterly check-ins</li>
+                          <li>Seasonal adjustments</li>
+                          <li>Long-term health tracking</li>            </ul>
+                      <a href="service-details-6.html" class="btn btn-outline" style="width: 100%;">View Service Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background-color: rgba(77, 124, 15, 0.02);">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center mb-4">
+                <span class="badge">Frequently Asked</span>
+                <h2>Questions & Answers</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="card glass mb-1" style="padding: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Do you take insurance?</h4>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Currently, we provide superbills that you can submit to your insurance company for potential reimbursement, depending on your out-of-network benefits.</p>
+                </div>
+                 <div class="card glass mb-1" style="padding: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Can I work with you remotely?</h4>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Yes! 100% of our coaching and programs are delivered digitally via secure video and chat systems.</p>
+                </div>
+                 <div class="card glass mb-1" style="padding: 1.5rem;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Is this a medical cure?</h4>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">No. We offer nutritional and lifestyle support to manage health and vitality. We do not claim to cure medical conditions and always recommend consulting your primary physician.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Reuse -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="nav-logo mb-1" style="color: var(--clr-text-primary);">
+                        <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+                    </a>
+                    <p style="color: var(--clr-text-secondary);">Empowering individuals with autoimmune conditions through science-backed holistic nutrition and compassionate coaching.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">1-on-1 Coaching</a></li>
+                        <li><a href="services.html">Lab Analysis</a></li>
+                        <li><a href="services.html">Meal Planning</a></li>
+                        <li><a href="services.html">Lifestyle Consulting</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Our Blog</a></li>
+                        <li><a href="programs.html">Healing Programs</a></li>
+                        <li><a href="contact.html">FAQ Section</a></li>
+                        <li><a href="about.html">Our Founder</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Get monthly healing tips and nutritious recipes.</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" style="padding: 0.5rem 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraWellness Holistic Nutrition. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

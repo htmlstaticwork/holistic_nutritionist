@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoimmune Vitality Intensive | AuraWellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Navbar Snippet -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Main</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 - Creative</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- Mobile Actions -->
+                <div class="nav-menu-actions d-lg-none">
+                    <div class="mobile-toggles">
+                        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="theme-toggle" id="rtl-toggle-mobile" aria-label="Toggle RTL mode">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-toggle" id="rtl-toggle" aria-label="Toggle RTL mode">
+                    <i class="fas fa-align-right"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Login</a>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header style="padding: 150px 0 80px; text-align: left; background: rgba(245, 158, 11, 0.02);">
+        <div class="container hero-content">
+            <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--clr-accent);">6-Week Targeted Reset</span>
+            <h1 style="font-size: 3.5rem;">Gut Health & <br>Inflammation Reset.</h1>
+            <p style="max-width: 600px;">A intensive, short-term protocol designed to cool systemic inflammation by repairing the gut barrier and rebalancing the microbiome.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 reveal">
+                    <h2>Program Roadmap</h2>
+                    <p class="mb-2">This 6-week sprint is designed for maximum efficiency, focusing only on the highest-leverage gut healing interventions.</p>
+                    
+                    <div style="position: relative; padding-left: 3rem; margin-top: 3rem; border-left: 2px solid var(--clr-border);">
+                        <!-- Phase 1 -->
+                        <div style="margin-bottom: 3rem; position: relative;">
+                            <div style="position: absolute; left: -42px; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--clr-accent); border: 4px solid var(--clr-bg);"></div>
+                            <span class="text-accent" style="font-weight: 700; font-size: 0.9rem;">Weeks 1-2</span>
+                            <h4 style="margin: 0.5rem 0;">Phase 1: The Elimination Sweep</h4>
+                            <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Rapidly removing the "Big 5" inflammatory triggers to stop the current immune overreaction and allow the gut lining to rest.</p>
+                        </div>
+                         <!-- Phase 2 -->
+                        <div style="margin-bottom: 3rem; position: relative;">
+                            <div style="position: absolute; left: -42px; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--clr-primary); border: 4px solid var(--clr-bg);"></div>
+                            <span class="text-primary" style="font-weight: 700; font-size: 0.9rem;">Weeks 3-4</span>
+                            <h4 style="margin: 0.5rem 0;">Phase 2: Gut Barrier Restoration</h4>
+                            <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Introducing collagen-rich broths, L-glutamine, and specific mucilage-rich herbs to physical 'patch' the intestinal lining.</p>
+                        </div>
+                         <!-- Phase 3 -->
+                        <div style="margin-bottom: 3rem; position: relative;">
+                             <div style="position: absolute; left: -42px; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--clr-accent); border: 4px solid var(--clr-bg);"></div>
+                            <span class="text-accent" style="font-weight: 700; font-size: 0.9rem;">Weeks 5-6</span>
+                            <h4 style="margin: 0.5rem 0;">Phase 3: Microbiome Re-Inoculation</h4>
+                            <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Strategic introduction of high-strain fermented foods and prebiotics to establish a resilient microbial defense system.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-5 reveal">
+                    <div class="card glass shadow-sm">
+                        <h3>What's Included</h3>
+                        <ul class="list-check mb-2">
+                            <li>Targeted 6-Week Meal Plan</li>
+                            <li>Weekly Digital Support Check-ins</li>
+                            <li>Inflammation Tracker Workbook</li>
+                            <li>6-Month Access to Library</li>
+                            <li>Members-Only Recipe Vault</li>            </ul>
+                         <p style="padding: 1.5rem 0; font-size: 1.5rem; color: var(--clr-primary); font-weight: 700; border-top: 1px solid var(--clr-border);">Total Investment: $695</p>
+                         <p style="color: var(--clr-text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">One-time payment or 2 x $375.</p>
+                         <a href="signup.html" class="btn btn-primary" style="width: 100%; background: var(--clr-accent); border-color: var(--clr-accent);">Enroll Now</a>
+                         <p style="text-align: center; margin-top: 0.8rem; font-size: 0.8rem; color: var(--clr-text-secondary);">Limited to 15 participants per month.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="nav-logo mb-1" style="color: var(--clr-text-primary);">
+                        <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+                    </a>
+                    <p style="color: var(--clr-text-secondary);">Empowering individuals with autoimmune conditions through science-backed holistic nutrition and compassionate coaching.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">1-on-1 Coaching</a></li>
+                        <li><a href="services.html">Lab Analysis</a></li>
+                        <li><a href="services.html">Meal Planning</a></li>
+                        <li><a href="services.html">Lifestyle Consulting</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Our Blog</a></li>
+                        <li><a href="programs.html">Healing Programs</a></li>
+                        <li><a href="contact.html">FAQ Section</a></li>
+                        <li><a href="about.html">Our Founder</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Get monthly healing tips and nutritious recipes.</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" style="padding: 0.5rem 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraWellness Holistic Nutrition. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

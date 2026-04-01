@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative Experience | AuraWellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 Grid Only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .hero-centered {
+            text-align: center;
+            min-height: 80vh;
+            padding-top: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+        }
+        .hero-centered h1 {
+            font-size: 4.5rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+        .hero-centered p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+        .hero-centered .btn {
+            font-size: 1.1rem;
+            padding: 1rem 3rem;
+        }
+        @media (max-width: 767px) {
+            .hero-centered h1 { font-size: 3rem; }
+        }
+    </style>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Navbar Snippet (simplified reuse) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Main</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 - Creative</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- Mobile Actions -->
+                <div class="nav-menu-actions d-lg-none">
+                    <div class="mobile-toggles">
+                        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="theme-toggle" id="rtl-toggle-mobile" aria-label="Toggle RTL mode">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a>
+                </div>
+            </ul>
+            <div class="nav-actions" style="gap: 0.8rem;">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="theme-toggle" id="rtl-toggle" aria-label="Toggle RTL mode">
+                    <i class="fas fa-align-right"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Login</a>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join Aura</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Centered Hero -->
+    <header class="hero-centered">
+        <div class="container hero-content">
+            <span class="badge">A Different Kind of Healing</span>
+            <h1>Real Food. Real Science. <br>Real Support.</h1>
+            <p>Our mission is to help you rediscover your health through nutrient-dense protocols that actually work for your autoimmune markers.</p>
+            <div class="flex-center" style="gap: 1.5rem;">
+                <a href="programs.html" class="btn btn-primary">Explore Our Programs</a>
+                <a href="services.html" class="btn btn-outline">Check All Services</a>
+            </div>
+            
+            <div class="mt-4" style="margin-top: 4rem;">
+                <img src="assets/images/services-nutrition.jpg" alt="Healthy whole foods" style="width: 100%; max-width: 850px; margin: 0 auto; border-radius: 3rem; box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </header>
+
+    <!-- Testimonials Section -->
+    <section style="background: var(--clr-surface);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <span class="badge">Success Stories</span>
+                <h2>Shared Joys of Healing</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="card glass shadow-sm reveal">
+                        <div style="display:flex; gap:0.2rem; color:var(--clr-accent); margin-bottom: 1rem;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-style: italic;">"The 'Aura' approach is truly revolutionary. It's the first time I've felt seen as a whole person, not just a list of clinical symptoms."</p>
+                        <h4 style="font-size: 1rem; margin-top: 1.5rem;">— Jessica T.</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card glass shadow-sm reveal">
+                         <div style="display:flex; gap:0.2rem; color:var(--clr-accent); margin-bottom: 1rem;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-style: italic;">"Switching to this data-driven methodology was the best decision. My daily energy levels are at a five-year high."</p>
+                        <h4 style="font-size: 1rem; margin-top: 1.5rem;">— Michael R.</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card glass shadow-sm reveal">
+                         <div style="display:flex; gap:0.2rem; color:var(--clr-accent); margin-bottom: 1rem;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p style="font-style: italic;">"The community support here is everything. Knowing I wasn't alone in the autoimmune struggle changed my outlook on life."</p>
+                        <h4 style="font-size: 1rem; margin-top: 1.5rem;">— Sophie B.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars of Healing Section -->
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 reveal">
+                    <img src="assets/images/services-nutrition.jpg" alt="Pillars of Health" style="border-radius: 2.5rem; height: 600px; object-fit: cover;">
+                </div>
+                <div class="col-md-6 reveal" style="padding-left: 5rem;">
+                    <span class="badge">The Philosophy</span>
+                    <h2>Our Four Pillars of <br>Autoimmune Vitality.</h2>
+                    <p class="mb-3">We believe healing isn't a straight line; it's a circle of consistent, supportive rituals that build upon one another.</p>
+                    
+                    <div class="mb-2">
+                        <h4 style="color: var(--clr-primary); margin-bottom: 0.5rem;"><img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> Nutrient Density</h4>
+                        <p style="font-size: 0.95rem;">Focusing on colors, enzymes, and inflammation-fighting whole foods.</p>
+                    </div>
+                    <div class="mb-2">
+                        <h4 style="color: var(--clr-primary); margin-bottom: 0.5rem;"><i class="fas fa-brain"></i> Nervous System Harmony</h4>
+                        <p style="font-size: 0.95rem;">Regulating the body's stress response to allow for true physiological repair.</p>
+                    </div>
+                    <div class="mb-2">
+                        <h4 style="color: var(--clr-primary); margin-bottom: 0.5rem;"><i class="fas fa-vial"></i> Clinical Precision</h4>
+                        <p style="font-size: 0.95rem;">Using laboratory markers to ensure we aren't guessing with your health.</p>
+                    </div>
+                    <div class="mb-2">
+                        <h4 style="color: var(--clr-primary); margin-bottom: 0.5rem;"><i class="fas fa-sun"></i> Daily Rituals</h4>
+                        <p style="font-size: 0.95rem;">Building sustainable habits that fit your actual schedule and lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section style="background: rgba(77, 124, 15, 0.02);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <span class="badge">The Path</span>
+                <h2>How Your Journey Unfolds</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 mb-2">
+                    <div class="text-center reveal">
+                        <div style="font-family: 'Lora', serif; font-size: 4rem; color: rgba(77, 124, 15, 0.1); margin-bottom: -1.5rem; font-weight: 700;">01</div>
+                        <h4 style="position: relative; z-index: 1;">Initial Intake</h4>
+                        <p style="font-size: 0.85rem; color: var(--clr-text-secondary);">Exploring your history, labs, and current metabolic state.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="text-center reveal">
+                        <div style="font-family: 'Lora', serif; font-size: 4rem; color: rgba(245, 158, 11, 0.1); margin-bottom: -1.5rem; font-weight: 700;">02</div>
+                        <h4 style="position: relative; z-index: 1;">Mapping</h4>
+                        <p style="font-size: 0.85rem; color: var(--clr-text-secondary);">Creating your unique nutritional and botanical roadmap.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="text-center reveal">
+                        <div style="font-family: 'Lora', serif; font-size: 4rem; color: rgba(77, 124, 15, 0.1); margin-bottom: -1.5rem; font-weight: 700;">03</div>
+                        <h4 style="position: relative; z-index: 1;">Integration</h4>
+                        <p style="font-size: 0.85rem; color: var(--clr-text-secondary);">Weekly support as you bring new rituals into your kitchen.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <div class="text-center reveal">
+                        <div style="font-family: 'Lora', serif; font-size: 4rem; color: rgba(245, 158, 11, 0.1); margin-bottom: -1.5rem; font-weight: 700;">04</div>
+                        <h4 style="position: relative; z-index: 1;">Review</h4>
+                        <p style="font-size: 0.85rem; color: var(--clr-text-secondary);">Analyzing progress and adjusting for long-term stability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery (Fictional) -->
+    <section>
+        <div class="container">
+             <div class="text-center mb-4">
+                <span class="badge">Behind the Scenes</span>
+                <h2>Vibrancy in Action</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4 reveal">
+                    <div style="height: 350px; background: url('assets/images/blog-recipe.jpg') center/cover; border-radius: 2rem;"></div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div style="height: 350px; background: url('assets/images/about-nutritionist.jpg') center/cover; border-radius: 2rem;"></div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div style="height: 350px; background: url('assets/images/blog-mental.jpg') center/cover; border-radius: 2rem;"></div>
+                </div>
+                 <div class="col-md-8 reveal">
+                    <div style="height: 350px; background: url('assets/images/hero-nutritionist.jpg') center/cover; border-radius: 2rem;"></div>
+                </div>
+                 <div class="col-md-4 reveal">
+                    <div style="height: 350px; background: url('assets/images/blog-sleep.jpg') center/cover; border-radius: 2rem;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Momentum -->
+    <section style="padding: 120px 0; background: linear-gradient(135deg, rgba(77, 124, 15, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);">
+        <div class="container text-center">
+            <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Ready to Witness Your Own <br><span class="text-primary">Transformation?</span></h2>
+            <p class="mb-3" style="font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto;">Our doors are currently open for new clients. Let’s map your route to healing together.</p>
+            <div class="flex-center" style="gap: 1.5rem;">
+                <a href="signup.html" class="btn btn-primary">Begin Registration</a>
+                <a href="contact.html" class="btn btn-outline">Schedule a Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="nav-logo mb-1">
+                        <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+                    </a>
+                    <p style="color: var(--clr-text-secondary);">Empowering individuals with autoimmune conditions through science-backed holistic nutrition and compassionate coaching.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">1-on-1 Coaching</a></li>
+                        <li><a href="services.html">Lab Analysis</a></li>
+                        <li><a href="services.html">Meal Planning</a></li>
+                        <li><a href="services.html">Lifestyle Consulting</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Our Blog</a></li>
+                        <li><a href="programs.html">Healing Programs</a></li>
+                        <li><a href="contact.html">FAQ Section</a></li>
+                        <li><a href="about.html">Our Founder</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Get monthly healing tips and nutritious recipes.</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" style="padding: 0.5rem 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraWellness Holistic Nutrition. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

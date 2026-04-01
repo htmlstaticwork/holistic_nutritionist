@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | AuraWellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Navbar Snippet -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Main</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 - Creative</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- Mobile Actions -->
+                <div class="nav-menu-actions d-lg-none">
+                    <div class="mobile-toggles">
+                        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="theme-toggle" id="rtl-toggle-mobile" aria-label="Toggle RTL mode">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-toggle" id="rtl-toggle" aria-label="Toggle RTL mode">
+                    <i class="fas fa-align-right"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Login</a>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Content Container -->
+    <main style="padding-top: 150px;">
+        <article class="container" style="max-width: 800px; margin-bottom: 60px;">
+             <div class="text-left mb-2">
+                <span class="badge" style="background: rgba(77, 124, 15, 0.1); color: var(--clr-primary);">Healing Recipes</span>
+                <h1 style="font-size: 3rem; margin-top: 1rem;">The Ultimate Mineral-Rich Bone Broth Guide.</h1>
+                <div style="display: flex; gap: 1rem; color: var(--clr-text-secondary); font-size: 0.95rem; margin-top: 1.5rem;">
+                    <span><i class="far fa-calendar"></i> April 22, 2026</span>
+                    <span><i class="far fa-clock"></i> 9 Min Read</span>
+                    <span><i class="far fa-user"></i> By Dr. Elena Aura</span>
+                </div>
+            </div>
+            
+            <img src="assets/images/blog-recipe.jpg" alt="Rich golden bone broth" style="width: 100%; border-radius: 2rem; margin-bottom: 3rem; box-shadow: var(--shadow-md);">
+            
+            <div class="blog-text reveal">
+                <p class="mb-2">Bone broth is more than just a culinary trend; it is a bioavailable multivitamin for anyone dealing with intestinal permeability or joint inflammation. The key is in the extraction process.</p>
+                
+                <h2 class="mb-1">1. Collagen and Glycine</h2>
+                <p class="mb-2">When bones are slow-simmered for 12-24 hours, they release collagen, proline, and glycine—amino acids that directly support the repair of the intestinal 'shingle' (the epithelial lining) and provide the building blocks for healthy connective tissue.</p>
+                
+                <h2 class="mb-1">2. Mineral Bioavailability</h2>
+                <p class="mb-2">Adding a splash of apple cider vinegar to your simmer helps leach essential minerals like calcium, magnesium, and phosphorus from the bone matrix and into the liquid, making them far easier for a compromised gut to absorb than a standard supplement.</p>
+                
+                <blockquote style="padding: 2.5rem; background: rgba(77, 124, 15, 0.05); border-radius: 1rem; border-left: 5px solid var(--clr-primary); margin: 3rem 0; font-style: italic; font-size: 1.2rem;">
+                    "Bone broth is 'liquid gold' for the gut. It provides the literal structural materials your body needs to patch and repair the holes in your first line of defense."
+                </blockquote>
+                
+                <h2 class="mb-1">3. The Slow Simmer</h2>
+                <p class="mb-2">True healing broth cannot be rushed. High-heat boiling can damage the delicate proteins. Aim for a low 'percolate'—where only one or two bubbles reach the surface every few seconds—to preserve the maximum nutrient density.</p>
+                
+                <h2 class="mb-1">Conclusion</h2>
+                <p>By integrating a single mug of mineral-rich broth into your daily routine, you provide your system with a consistent supply of joint-soothing and gut-healing information. It is the gold standard of holistic nourishment.</p>
+            </div>
+            
+            <!-- Social Share (Simple) -->
+            <div style="border-top: 1px solid var(--clr-border); padding-top: 2rem; margin-top: 4rem; display: flex; align-items:center; gap: 1.5rem;">
+                <span style="font-weight: 700;">Share this knowledge:</span>
+                <div style="display:flex; gap:1rem;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Sidebar/Related (Simple for details page) -->
+        <section style="background: var(--clr-bg); padding: 80px 0;">
+            <div class="container">
+                <h3 class="mb-2" style="text-align: center;">Related Articles</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <div class="card glass reveal">
+                            <h4 style="margin-bottom: 0.5rem;"><a href="#">The Nervous System Reset: 3 Rituals</a></h4>
+                            <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Simple techniques to calm your system in minutes.</p>
+                        </div>
+                    </div>
+                     <div class="col-md-6 mb-2">
+                        <div class="card glass reveal">
+                            <h4 style="margin-bottom: 0.5rem;"><a href="#">Gut-Health: Beyond Probiotics</a></h4>
+                            <p style="font-size: 0.9rem; color: var(--clr-text-secondary);">Exploring the deeper layers of intestinal permeability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="nav-logo mb-1" style="color: var(--clr-text-primary);">
+                        <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+                    </a>
+                    <p style="color: var(--clr-text-secondary);">Empowering individuals with autoimmune conditions through science-backed holistic nutrition and compassionate coaching.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">1-on-1 Coaching</a></li>
+                        <li><a href="services.html">Lab Analysis</a></li>
+                        <li><a href="services.html">Meal Planning</a></li>
+                        <li><a href="services.html">Lifestyle Consulting</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Our Blog</a></li>
+                        <li><a href="programs.html">Healing Programs</a></li>
+                        <li><a href="contact.html">FAQ Section</a></li>
+                        <li><a href="about.html">Our Founder</a></li>            </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Get monthly healing tips and nutritious recipes.</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Email Address" class="form-control" style="padding: 0.5rem 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraWellness Holistic Nutrition. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
