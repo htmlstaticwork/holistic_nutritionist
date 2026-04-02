@@ -219,21 +219,12 @@ section {
     font-size: 0.95rem;
     position: relative;
     padding: 0.5rem 0;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--clr-primary);
     transition: var(--transition);
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link:hover,
+.nav-link.active {
+    color: var(--clr-primary) !important;
 }
 
 .nav-actions {
@@ -378,6 +369,23 @@ footer {
     padding-left: 5px;
 }
 
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.footer-socials a {
+    color: var(--clr-text-secondary);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--clr-primary);
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
     padding-top: 40px;
     border-top: 1px solid var(--clr-border);
@@ -399,6 +407,30 @@ footer {
 
 .text-primary {
     color: var(--clr-primary);
+}
+
+/* Card Links Hover Effect */
+.card a.text-primary, 
+.card a.text-accent {
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.card a.text-primary:hover, 
+.card a.text-accent:hover {
+    text-decoration: underline !important;
+    opacity: 0.8;
+}
+
+.card a i {
+    transition: transform 0.3s ease;
+}
+
+.card a:hover i {
+    transform: translateX(6px);
 }
 
 .text-secondary {
@@ -457,6 +489,15 @@ footer {
     flex: 0 0 100%;
     max-width: 100%;
     padding: 0 15px;
+}
+
+.about-content {
+    padding-left: 4rem;
+}
+
+.philosophy-img {
+    height: 600px;
+    object-fit: cover;
 }
 
 @media (max-width: 1024px) {
@@ -577,6 +618,52 @@ footer {
 
     .hero-content {
         margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .hero-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .hero .glass {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin: -40px auto 0 !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center;
+        z-index: 2;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .about-summary {
+        text-align: center;
+    }
+
+    .about-summary img {
+        margin-bottom: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-content {
+        padding-left: 0 !important;
+        margin-top: 2rem;
+    }
+
+    .about-content .list-check {
+        display: inline-block;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .about-content .btn {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -781,6 +868,11 @@ footer {
     .hero-content {
         text-align: center;
     }
+
+    .philosophy-img {
+        height: 350px !important;
+        margin-bottom: 2.5rem;
+    }
 }
 
 .mobile-toggles {
@@ -831,3 +923,117 @@ footer {
         max-width: 50% !important;
     }
 }
+
+/* Tablet Layout for Testimonials */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .testimonial-grid .col-md-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 1rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+.faq-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.faq-header i {
+    font-size: 0.9rem;
+    color: var(--clr-primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.5rem;
+}
+
+.faq-body p {
+    font-size: 0.95rem;
+    color: var(--clr-text-secondary);
+    line-height: 1.6;
+}
+
+.faq-item.active {
+    border-color: var(--clr-primary-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item.active .faq-body {
+    max-height: 300px;
+    padding-bottom: 1.5rem;
+}
+
+.faq-item.active .faq-header i {
+    transform: rotate(45deg);
+}
+
+
+.science-cta {
+    padding-left: 5rem;
+}
+
+.science-card {
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Response for Science Section */
+@media (max-width: 1024px) {
+    .science-cta {
+        padding-left: 0 !important;
+        margin-top: 3rem;
+    }
+    
+    .science-card {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form .form-control {
+        margin-bottom: 0.5rem;
+    }
+    
+    .science-card {
+        padding: 1.5rem;
+    }
+}
+
+

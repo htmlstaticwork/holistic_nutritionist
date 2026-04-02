@@ -94,4 +94,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // 5. FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems) {
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(el => el.classList.remove('active'));
+                
+                // Toggle current if it wasn't already active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    }
 });
