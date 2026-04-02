@@ -231,6 +231,11 @@ section {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    margin-left: 0;
+}
+
+[dir="rtl"] .nav-actions {
+    margin-right: 0;
 }
 
 /* Mobile Toggle Styling */
@@ -410,7 +415,7 @@ footer {
 }
 
 /* Card Links Hover Effect */
-.card a.text-primary, 
+.card a.text-primary,
 .card a.text-accent {
     transition: var(--transition);
     display: inline-flex;
@@ -419,7 +424,7 @@ footer {
     font-weight: 600;
 }
 
-.card a.text-primary:hover, 
+.card a.text-primary:hover,
 .card a.text-accent:hover {
     text-decoration: underline !important;
     opacity: 0.8;
@@ -850,7 +855,8 @@ footer {
         padding: 1.5rem;
     }
 
-    .flex-center, .stat-container {
+    .flex-center,
+    .stat-container {
         flex-wrap: wrap;
         flex-direction: column;
         gap: 1.5rem !important;
@@ -880,6 +886,7 @@ footer {
     gap: 1.5rem;
     justify-content: center;
 }
+
 @media (min-width: 992px) and (max-width: 1024px) {
     .pricing-pkg {
         flex: 0 0 50% !important;
@@ -893,6 +900,7 @@ footer {
         align-items: center !important;
         text-align: center !important;
     }
+
     .contact-info {
         padding-left: 0 !important;
         margin-top: 3rem !important;
@@ -900,23 +908,40 @@ footer {
         flex-direction: column !important;
         align-items: center !important;
     }
+
     .contact-info ul {
         display: inline-block;
         text-align: center;
         padding: 0;
     }
+
     .contact-info ul li {
         list-style: none;
     }
+
     .contact-socials {
         justify-content: center !important;
     }
 }
+
+.contact-socials a {
+    color: var(--clr-text-secondary);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.contact-socials a:hover {
+    color: var(--clr-primary);
+    transform: translateY(-5px);
+}
+
+
 @media (min-width: 1025px) {
     .contact-info {
         padding-left: 5rem !important;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1024px) {
     .info-card {
         flex: 0 0 50% !important;
@@ -1016,7 +1041,7 @@ footer {
         padding-left: 0 !important;
         margin-top: 3rem;
     }
-    
+
     .science-card {
         padding: 2.5rem;
     }
@@ -1026,14 +1051,112 @@ footer {
     .newsletter-form {
         flex-direction: column;
     }
-    
+
     .newsletter-form .form-control {
         margin-bottom: 0.5rem;
     }
-    
+
     .science-card {
         padding: 1.5rem;
     }
 }
 
+/* Auth Page Layout */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, rgba(77, 124, 15, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
 
+[data-theme="dark"] .auth-page {
+    background: linear-gradient(135deg, rgba(77, 124, 15, 0.1) 0%, rgba(11, 31, 20, 1) 100%);
+}
+
+
+/* RTL Support */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-logo {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-link i,
+[dir="rtl"] .btn i {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .list-check li::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .list-check li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+}
+
+[dir="rtl"] .about-content {
+    padding-left: 0;
+    padding-right: 4rem;
+}
+
+[dir="rtl"] .glass {
+    left: auto !important;
+    right: -20px !important;
+}
+
+[dir="rtl"] .nav-menu {
+    left: -100%;
+    right: auto;
+    transition: var(--transition);
+}
+
+[dir="rtl"] .nav-menu.active {
+    left: 0;
+    right: auto;
+}
+
+@media (max-width: 1024px) {
+    [dir="rtl"] .nav-menu {
+        left: -100%;
+        right: auto;
+    }
+    [dir="rtl"] .nav-menu.active {
+        left: 0;
+        right: auto;
+    }
+}
+
+[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+    text-align: right;
+}
+
+[dir="rtl"] .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+[dir="rtl"] .card a:hover i {
+    transform: translateX(-6px);
+}
+
+[dir="rtl"] .mobile-nav-toggle {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Fix for stat containers and flex elements in RTL */
+[dir="rtl"] .flex-center,
+[dir="rtl"] .stat-container,
+[dir="rtl"] .nav-actions,
+[dir="rtl"] .nav-container {
+    flex-direction: row; /* Browser handles reversal via dir="rtl" */
+}

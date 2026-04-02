@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,7 @@
             text-align: center;
             min-height: 80vh;
             padding-top: 150px;
+            padding-bottom: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -48,6 +49,14 @@
     </style>
 
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
 </head>
 <body>
 
@@ -59,7 +68,7 @@
             </a>
 
             <!-- Mobile Toggle -->
-            <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+            <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
@@ -70,14 +79,14 @@
                         <a href="home-2.html" class="dropdown-item">Home 2 - Creative</a>
                     </div>
                 </li>
-                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="programs.html" class="nav-link">Programs</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <!-- Mobile Actions -->
-                <div class="nav-menu-actions d-lg-none">
+                <div class="nav-menu-actions d-xl-none">
                     <div class="mobile-toggles">
                         <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
                             <i class="fas fa-moon"></i>
@@ -96,7 +105,7 @@
                     <i class="fas fa-align-right"></i>
                 </button>
                 <a href="login.html" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Login</a>
-                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join Aura</a>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Signup</a>
             </div>
         </div>
     </nav>
