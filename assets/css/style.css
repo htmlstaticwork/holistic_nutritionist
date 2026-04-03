@@ -496,6 +496,18 @@ footer {
     padding: 0 15px;
 }
 
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        padding: 0 15px;
+    }
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
 .about-content {
     padding-left: 4rem;
 }
@@ -863,6 +875,11 @@ footer {
         align-items: center;
     }
 
+    .flex-center .btn {
+        width: 100%;
+        max-width: 350px;
+    }
+
     .text-center-mobile {
         text-align: center !important;
     }
@@ -887,12 +904,7 @@ footer {
     justify-content: center;
 }
 
-@media (min-width: 992px) and (max-width: 1024px) {
-    .pricing-pkg {
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
-    }
-}
+
 
 @media (max-width: 1024px) {
     .contact-row {
@@ -942,16 +954,16 @@ footer {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1024px) {
-    .info-card {
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
-    }
-}
 
-/* Tablet Layout for Testimonials */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .testimonial-grid .col-md-4 {
+
+/* Tablet Layout Adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+    .testimonial-grid,
+    .row.justify-content-center {
+        justify-content: center !important;
+    }
+    
+    .col-md-4 {
         flex: 0 0 50% !important;
         max-width: 50% !important;
     }
