@@ -263,14 +263,14 @@ section {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
     background: var(--clr-surface);
     border-radius: var(--radius);
     padding: 1rem;
     min-width: 220px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
+    transform: translateX(-50%) translateY(10px);
     transition: var(--transition);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--clr-border);
@@ -280,7 +280,7 @@ section {
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .dropdown-item {
