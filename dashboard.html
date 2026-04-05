@@ -100,6 +100,21 @@
             font-size: 8rem;
             opacity: 0.1;
         }
+        .meal-plan-card .btn {
+            background: white;
+            color: var(--clr-primary);
+            width: 100%;
+            font-weight: 800;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .meal-plan-card .btn:hover {
+            background: var(--clr-bg) !important;
+            color: var(--clr-primary-light) !important;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
 
         @media (max-width: 1024px) {
             .dashboard-container { grid-template-columns: 1fr; }
@@ -124,6 +139,20 @@
                 flex: 0 0 50% !important;
                 max-width: 50% !important;
             }
+
+            .dashboard-welcome {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1.5rem;
+                text-align: left;
+            }
+            .dashboard-welcome div {
+                width: 100%;
+            }
+            .dashboard-welcome .btn {
+                width: auto !important; /* Keep it auto-width on tablet unless smaller */
+                display: inline-block;
+            }
         }
 
         @media (max-width: 767px) {
@@ -141,17 +170,6 @@
                 padding: 1.5rem 0.75rem; 
                 width: 100%;
                 max-width: 100vw;
-                box-sizing: border-box;
-                overflow-x: hidden;
-            }
-            .dashboard-welcome {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 1.5rem;
-                text-align: left;
-            }
-            .dashboard-welcome div {
-                width: 100%;
             }
             .dashboard-welcome .btn {
                 width: 100% !important;
@@ -224,6 +242,15 @@
             <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--clr-border);">
             <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
             <a href="login.html" class="sidebar-link" style="color: #ef4444;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+            <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; border-top: 1px solid var(--clr-border);">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" style="width: 42px; height: 42px; border-radius: 50%; background: var(--clr-bg); border: 1px solid var(--clr-border); color: var(--clr-text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-toggle" id="rtl-toggle" aria-label="Toggle RTL mode" style="width: 42px; height: 42px; border-radius: 50%; background: var(--clr-bg); border: 1px solid var(--clr-border); color: var(--clr-text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+                    <i class="fas fa-align-right"></i>
+                </button>
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -295,7 +322,7 @@
                         <p style="font-size: 0.85rem;">Steamed Wild Salmon with Turmeric-Zucchini Grate & Roasted Fennel.</p>
                     </div>
                     
-                    <button class="btn" style="background: white; color: var(--clr-primary); width: 100%; font-weight: 800; border: none;">Download Full Week PDF</button>
+                    <button class="btn">Download Full Week PDF</button>
                 </div>
             </div>
 

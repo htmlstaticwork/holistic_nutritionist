@@ -624,6 +624,87 @@ footer {
     margin-bottom: 2.5rem;
 }
 
+.hero-btns {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-btns .btn {
+    padding: 1rem 2.8rem;
+    font-size: 1.05rem;
+    border-radius: 15px; /* Modern separate button feel */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btns .btn-primary {
+    background: var(--clr-primary);
+    color: #fff;
+    box-shadow: 0 20px 40px -15px rgba(77, 124, 15, 0.5);
+    border: none;
+}
+
+.hero-btns .btn-outline {
+    background: var(--clr-surface);
+    border: 2px solid var(--clr-primary);
+    color: var(--clr-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hero-btns .btn:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btns .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.hero-btns .btn:hover::before {
+    left: 100%;
+}
+
+/* Specific Tablet View Styling - Separate & Balanced */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .hero-btns {
+        display: flex !important;
+        gap: 1rem;
+        justify-content: flex-start;
+        background: transparent !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .hero-btns .btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+        min-width: 170px;
+        text-align: center;
+        border-radius: 12px;
+    }
+
+    .hero-btns .btn-outline {
+        background: var(--clr-glass);
+        backdrop-filter: blur(8px);
+    }
+}
+
 @media (max-width: 767px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -636,6 +717,18 @@ footer {
     .hero-content {
         margin: 0 auto;
         margin-bottom: 3rem;
+    }
+
+    .hero-btns {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 340px;
     }
 
     .hero-image {
@@ -1087,6 +1180,15 @@ footer {
     background: linear-gradient(135deg, rgba(77, 124, 15, 0.1) 0%, rgba(11, 31, 20, 1) 100%);
 }
 
+.auth-page a {
+    transition: var(--transition);
+}
+
+.auth-page a:hover {
+    color: var(--clr-primary-light) !important;
+    text-decoration: underline !important;
+}
+
 
 /* RTL Support */
 [dir="rtl"] {
@@ -1172,3 +1274,10 @@ footer {
 [dir="rtl"] .nav-container {
     flex-direction: row; /* Browser handles reversal via dir="rtl" */
 }
+ 
+/* Utility Classes */
+.d-flex { display: flex !important; }
+.flex-column { flex-direction: column !important; }
+.justify-content-center { justify-content: center !important; }
+.mt-auto { margin-top: auto !important; }
+.mb-2 { margin-bottom: 2rem !important; }
