@@ -401,6 +401,10 @@ footer {
     color: var(--clr-text-secondary);
 }
 
+.footer-bottom a:hover {
+    color: var(--clr-primary);
+}
+
 /* Utility Classes */
 .text-center {
     text-align: center;
