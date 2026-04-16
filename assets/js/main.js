@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateThemeIcon(toggle, theme) {
         if (!toggle) return;
         const icon = toggle.querySelector('i');
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
     }
 
     // 1.5 RTL Toggle Logic
@@ -31,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateRtlIcon(toggle, dir) {
         if (!toggle) return;
         const icon = toggle.querySelector('i');
-        icon.className = (dir === 'rtl') ? 'fas fa-align-left' : 'fas fa-align-right';
+        if (icon) {
+            icon.className = (dir === 'rtl') ? 'fas fa-align-left' : 'fas fa-align-right';
+        }
     }
     rtlToggles.forEach(t => updateRtlIcon(t, currentDir));
 

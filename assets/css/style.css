@@ -296,28 +296,34 @@ section {
     color: var(--clr-primary);
 }
 
-/* Theme Toggle Button */
+/* Theme & RTL Toggle Button */
 .theme-toggle {
-    background: transparent;
-    border: none;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
     cursor: pointer;
     color: var(--clr-text-primary);
-    font-size: 1.2rem;
-    width: 40px;
-    height: 40px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
 }
 
 .theme-toggle:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--clr-primary);
+    color: white;
+    border-color: var(--clr-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Cards */
