@@ -4,8 +4,8 @@
     /* Light Mode Colors */
     --clr-primary: #4D7C0F;
     --clr-primary-light: #6A9922;
-    --clr-accent: #F59E0B;
-    --clr-accent-light: #FBBF24;
+    --clr-accent: #4D7C0F;
+    --clr-accent-light: #6A9922;
     --clr-bg: #FDFBF7;
     --clr-surface: #FFFFFF;
     --clr-text-primary: #1F2937;
@@ -25,13 +25,13 @@
 
 [data-theme="dark"] {
     /* Dark Mode Colors */
-    --clr-bg: #0B1F14;
-    --clr-surface: #13291E;
+    --clr-bg: #000000;
+    --clr-surface: #0a0a0a;
     --clr-text-primary: #E5E7EB;
     --clr-text-secondary: #9CA3AF;
     --clr-border: #1F382A;
-    --clr-accent: #FBBF24;
-    --clr-glass: rgba(19, 41, 30, 0.7);
+    --clr-accent: #6A9922;
+    --clr-glass: rgba(10, 10, 10, 0.7);
     --clr-glass-border: rgba(255, 255, 255, 0.1);
 }
 
@@ -91,7 +91,13 @@ img {
 }
 
 section {
-    padding: 100px 0;
+    padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 40px 0;
+    }
 }
 
 /* Glassmorphism */
@@ -1291,3 +1297,21 @@ footer {
 .justify-content-center { justify-content: center !important; }
 .mt-auto { margin-top: auto !important; }
 .mb-2 { margin-bottom: 2rem !important; }
+
+/* Auth Page Custom Styles */
+.remember-label {
+    font-size: 0.85rem;
+}
+
+.forgot-link {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 480px) {
+    .remember-label {
+        font-size: 0.75rem;
+    }
+    .forgot-link {
+        font-size: 0.65rem;
+    }
+}

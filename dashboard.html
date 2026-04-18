@@ -236,14 +236,23 @@
 
     <!-- Navbar Snippet -->
     <nav class="navbar" style="background: var(--clr-surface); border-bottom: 1px solid var(--clr-border);">
-        <div class="container nav-container">
+        <div class="nav-container" style="width: 100%; max-width: none; padding: 0 2rem;">
             <a href="index.html" class="nav-logo">
-                <img src="assets/images/favicon.svg" alt="AuraWellness Logo" style="width: 24px; height: 24px; vertical-align: middle;"> AuraWellness
+                <i class="fas fa-spa text-primary" style="font-size: 1.4rem; vertical-align: middle; margin-right: 0.3rem;"></i> AuraWellness
             </a>
-            <!-- Mobile Sidebar Toggle -->
-            <button id="sidebar-toggle" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--clr-primary);" class="d-lg-none">
-                <i class="fas fa-bars"></i>
-            </button>
+            
+            <div style="display: flex; gap: 1rem; align-items: center; margin-left: auto;">
+                <!-- Profile Option -->
+                <a href="#" style="display: flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+                    <span style="font-weight: 600; color: var(--clr-text-primary);" class="d-none d-sm-block">Jane Doe</span>
+                    <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--clr-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid var(--clr-bg); box-shadow: var(--shadow-sm);">JD</div>
+                </a>
+                
+                <!-- Mobile Sidebar Toggle -->
+                <button id="sidebar-toggle" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--clr-primary); margin-left: 0.5rem;" class="d-lg-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -356,7 +365,7 @@
                             </div>
                             <div style="display:flex; justify-content:space-between; align-items:center;">
                                 <span style="font-size: 0.9rem;">Magnesium Glycinate</span>
-                                <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--clr-accent);">Evening</span>
+                                <span class="badge" style="background: rgba(77, 124, 15, 0.1); color: var(--clr-accent);">Evening</span>
                             </div>
                         </div>
                     </div>
