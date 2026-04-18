@@ -227,6 +227,22 @@
         .theme-toggle:active {
             opacity: 0.8;
         }
+
+        /* Fix header space on scroll */
+        .navbar {
+            height: 80px !important;
+            padding: 0 !important;
+            display: flex;
+            align-items: center;
+            background: var(--clr-surface) !important;
+            border-bottom: 1px solid var(--clr-border) !important;
+            backdrop-filter: none !important;
+        }
+
+        .navbar.scrolled {
+            padding: 0 !important;
+            height: 80px !important;
+        }
     </style>
 
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -235,7 +251,7 @@
 <body>
 
     <!-- Navbar Snippet -->
-    <nav class="navbar" style="background: var(--clr-surface); border-bottom: 1px solid var(--clr-border);">
+    <nav class="navbar">
         <div class="nav-container" style="width: 100%; max-width: none; padding: 0 2rem;">
             <a href="index.html" class="nav-logo">
                 <i class="fas fa-spa text-primary" style="font-size: 1.4rem; vertical-align: middle; margin-right: 0.3rem;"></i> AuraWellness
