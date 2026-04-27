@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = toggle.querySelector('i');
         if (icon) {
             icon.className = (dir === 'rtl') ? 'fas fa-align-left' : 'fas fa-align-right';
+        } else {
+            // If no icon, we can toggle text or just let it be. 
+            // The user's buttons have "RTL" text.
+            toggle.textContent = 'RTL'; 
         }
     }
     rtlToggles.forEach(t => updateRtlIcon(t, currentDir));
